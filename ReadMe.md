@@ -15,9 +15,9 @@ Please note that if you want to use the SIMD dataset, please cite the paper:
 
 # SIMD Dataset
 
-[The Smartphone Inertial Measurement Dataset](https://ieeexplore.ieee.org/document/10373097) is a crowdsourced set of inertial data for pedestrian tracking which is recorded by smartphones at 50 Hz in both indoor and outdoor environments. The suite consists of multiple indoor and outdoor scenarios, multiple poses of smartphones, and multiple users with different attributes. The above setup helps it to support the evaluation of algorithm performance in different conditions, which is beneficial for promoting research on data-driven inertial navigation based approaches.
+SIMD is a crowdsourced set of inertial data for pedestrian tracking which is recorded by smartphones at 50 Hz in both indoor and outdoor environments. The suite consists of multiple indoor and outdoor scenarios, multiple poses of smartphones, and multiple users with different attributes. The above setup helps it to support the evaluation of algorithm performance in different conditions, which is beneficial for promoting research on data-driven inertial navigation based approaches.
 
-Due to the different concerns, some information (for example, some of the environment settings) is not accurately described. In addition, the orientation of the ground trajectories contains only left and right right-angle turns, the orientation of the start position is determined by the user, and some of the trajectories contain data calibration actions at the beginning of the trajectory. This dataset is available at this repository.
+Due to the different focus, some information (for example, some of the environment settings) is not accurately described. In addition, the orientation of the ground trajectories contains only left and right right-angle turns, the orientation of the start position is determined by the user, and some of the trajectories contain data calibration actions at the beginning of the trajectory. This dataset is available at this repository.
 
 The data in this repository are collected in **Beijing**, China. In particular, the outdoor data are collected in areas such as school playgrounds, and the indoor data are collected in underground parking garages in a school and a shopping mall.
 
@@ -29,57 +29,58 @@ The dataset can be download from this repository. The relevant description of th
 
 The data set catalogue structure is divided according to scene, pose, and user.
 
-- Indoor
-    - Bag
-        - user1
-        - user2
-        - user3
-        - ...
-    - Calling
-        - user1
-        - user2
-        - user3
-        - ...
-    - Flat
-        - user1
-        - user2
-        - user3
-        - ...
-    - Pocket
-        - user1
-        - user2
-        - user3
-        - ...
-    - ...
-- Outdoor
-    - Bag
-        - user1
-        - user2
-        - user3
-        - ...
-    - Calling
-        - user1
-        - user2
-        - user3
-        - ...
-    - Flat
-        - user1
-        - user2
-        - user3
-        - ...
-    - Pocket
-        - user1
-        - user2
-        - user3
-        - ...
-    - ...
+- data
+  - Indoor
+      - Bag
+          - user1
+          - user2
+          - user3
+          - ...
+      - Calling
+          - user1
+          - user2
+          - user3
+          - ...
+      - Flat
+          - user1
+          - user2
+          - user3
+          - ...
+      - Pocket
+          - user1
+          - user2
+          - user3
+          - ...
+      - ...
+  - Outdoor
+      - Bag
+          - user1
+          - user2
+          - user3
+          - ...
+      - Calling
+          - user1
+          - user2
+          - user3
+          - ...
+      - Flat
+          - user1
+          - user2
+          - user3
+          - ...
+      - Pocket
+          - user1
+          - user2
+          - user3
+          - ...
+      - ...
 
 In each user sub-folder, multiple pieces of trajectory data collected by that user are included.
 
 
 ## Explanations of data fields
 
-Table 1 shows the meaning and example of each field in the data file. Specifically, we capture sensor data such as accelerometers, gyroscopes, gravimeters, and rotation vectors, as well as GPS signals with smartphones.
+The following table shows the meaning and examples of each field in the data file. In short, we collect sensor data from smartphones, such as accelerometers, gyroscopes, gravimeters and rotation vectors, as well as GPS signals, etc.
 
 <table>  
     <tr>    
