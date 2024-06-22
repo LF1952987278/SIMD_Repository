@@ -1,10 +1,29 @@
-# Description of the SIMD data set
+# SIMD (Smartphone Inertial Measurement Dataset)
 
-This repository is used to maintain the SIMD data set presented in the paper entitled "xxx".
+Introduced by Liu et al. in [Smartphone-based Pedestrian Inertial Tracking:
+Dataset, Model, and Deployment](https://ieeexplore.ieee.org/document/10373097)。
 
-The data set captures IMU and GPS data from smartphones, which contains multiple scenarios, poses, and users.
+Please note that if you want to use the SIMD dataset, please cite the paper:
 
-Scenes include school playgrounds, underground parking garages in schools and shopping malls, etc. Poses include placing the the smartphone flat, holding the phone for calling, placing the phone in the bags or pockets, swinging the arm, etc. The outdoor data take the GPS information as the ground truth, and the indoor data take the fixed route and manually recorded position as the trajectory ground truth.
+> @article{liu2023smartphone,
+  title={Smartphone-based Pedestrian Inertial Tracking: Dataset, Model, and Deployment},
+  author={Liu, Feng and Ge, Hongyu and Tao, Dan and Gao, Ruipeng and Zhang, Zhang},
+  journal={IEEE Transactions on Instrumentation and Measurement},
+  year={2023},
+  publisher={IEEE}
+}
+
+# SIMD Dataset
+
+[The Smartphone Inertial Measurement Dataset](https://ieeexplore.ieee.org/document/10373097) is a crowdsourced set of inertial data for pedestrian tracking which is recorded by smartphones at 50 Hz in both indoor and outdoor environments. The suite consists of multiple indoor and outdoor scenarios, multiple poses of smartphones, and multiple users with different attributes. The above setup helps it to support the evaluation of algorithm performance in different conditions, which is beneficial for promoting research on data-driven inertial navigation based approaches.
+
+Due to the different concerns, some information (for example, some of the environment settings) is not accurately described. In addition, the orientation of the ground trajectories contains only left and right right-angle turns, the orientation of the start position is determined by the user, and some of the trajectories contain data calibration actions at the beginning of the trajectory. This dataset is available at this repository.
+
+The data in this repository are collected in **Beijing**, China. In particular, the outdoor data are collected in areas such as school playgrounds, and the indoor data are collected in underground parking garages in a school and a shopping mall.
+
+# How to use SIMD Dataset
+
+The dataset can be download from this repository. The relevant description of the dataset is as follows:
 
 ## Data Set Structure
 
@@ -32,7 +51,7 @@ The data set catalogue structure is divided according to scene, pose, and user.
         - user3
         - ...
     - ...
-* Outdoor
+- Outdoor
     - Bag
         - user1
         - user2
@@ -54,6 +73,8 @@ The data set catalogue structure is divided according to scene, pose, and user.
         - user3
         - ...
     - ...
+
+In each user sub-folder, multiple pieces of trajectory data collected by that user are included.
 
 
 ## Explanations of data fields
@@ -162,21 +183,4 @@ Table 1 shows the meaning and example of each field in the data file. Specifical
         <td style="text-align:center;">degree</td>  
     </tr> 
 </table>
-
-# Additional Information
-
-可以参考Readme的word补充数据的详细信息。
-
-- The outdoor walking trajectory is determined by the users, but the walking journey includes only straight ahead, left right-angle turn and right right-angle turn, and the initial 5s of each trajectory is straight ahead, while the direction facing at the starting position is also determined by the users. In addition, the large jitter at the beginning of the data for a period of time are caused by the user performing the dynamic calibration, which involves doing the eight-like actions in the air (for magnetometer calibration) and keeping the smartphone in the flat attitude for five seconds (for accelerometer calibration).
-
-- The indoor walking trajectory mainly completes the collection in the parking garage of the school and the shopping mall, the floor plan is shown below.
-
-![Alt text](<scool parking lot.jpg>)
-![Alt text](shoopingmallparkinglot_gray.jpg)
-
-<img src="file://E:/documents/QQ/scool parking lot.jpg"  width="200" height="200" />
-
-
-
-
 
